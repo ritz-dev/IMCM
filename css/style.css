@@ -86,6 +86,23 @@ ul,ol{
 	color: #FFF;
 }
 
+.special-text {
+	position: relative;
+	background-color: #fff;
+	display: inline-block;
+	padding: 5px 10px;
+}
+
+.special-text::before{
+	content: '';
+	background-color: #00125a;
+	width: 5px;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
 blockquote {
 	position: relative;
 	margin: 20px 0px;
@@ -253,11 +270,11 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 
 #header.transparent-nav {
 	position:absolute;
-	background-color: transparent;
+	background-color: #FFF;
 }
 
 #header.transparent-nav .main-menu li a {
-	color:#FFF;
+	color:#374050;
 }
 
 .main-menu li a {
@@ -782,7 +799,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 	margin-right: 15px;
 	border: 1px solid #EBEBEB;
 	border-radius: 50%;
-	width: 40px;
+	/* width: 40px; */
 	height: 40px;
 	line-height: 40px;
 	text-align: center;
