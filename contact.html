@@ -19,6 +19,9 @@
 
 		<!-- Custom stlylesheet -->
 		<link type="text/css" rel="stylesheet" href="css/style.css"/>
+		
+ 		<!-- Leaflet JS -->
+		<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -28,6 +31,12 @@
 		<![endif]-->
 
     </head>
+    <style>
+	#map {
+	  height: 400px;
+	  width: 100%;
+	}
+   </style>
 	<body>
 
 		<!-- Header -->
@@ -123,7 +132,7 @@
 						</ul>
 
 						<!-- contact map -->
-						<div id="contact-map"></div>
+						<div id="map"></div>
 						<!-- /contact map -->
 
 					</div>
@@ -210,12 +219,30 @@
 		<!-- /preloader -->
 
 
+		<!-- Leaflet JS -->
+		<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
 		<!-- jQuery Plugins -->
 		<script type="text/javascript" src="js/jquery.min.js"></script>
 		<script type="text/javascript" src="js/bootstrap.min.js"></script>
 		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
 		<script type="text/javascript" src="js/google-map.js"></script>
 		<script type="text/javascript" src="js/main.js"></script>
+
+		<script>
+			// Set map center and zoom
+			var map = L.map('map').setView([40.730610, -73.935242], 13); // New York City
+		 
+			// Add OpenStreetMap tiles
+			L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+			  attribution: '© OpenStreetMap contributors'
+			}).addTo(map);
+		 
+			// Add a marker
+			L.marker([40.730610, -73.935242]).addTo(map)
+			  .bindPopup('New York City')
+			  .openPopup();
+		   </script>
 
 	</body>
 </html>
