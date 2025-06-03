@@ -3,6 +3,149 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Simple Vertical Stepper</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f9f9f9;
+      padding: 2rem;
+    }
+
+    .steps {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+      position: relative;
+    }
+
+    .step {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    .icon {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      background: #fff;
+      border: 2px solid #ffb700; /* dark blue */
+      text-align: center;
+      line-height: 2rem;
+      font-weight: bold;
+      color: #00125a;
+      margin-right: 1rem;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1; /* to be above the line */
+    }
+
+    /* Add vertical line connecting icons */
+    .step:not(:last-child) .icon::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 100%;
+      transform: translateX(-50%);
+      width: 2px;
+      height:60px; /* height between steps */
+      background-color: #00125a;
+      z-index: 0;
+    }
+
+    /* Done step icon style */
+    /* .done .icon {
+      background-color: #4caf50;
+      color: white;
+      border: none;
+    } */
+
+    /* Make line green for done steps */
+    /* .done .icon::after {
+      background-color: #4caf50;
+    } */
+
+    /* Active step icon style */
+    /* .active .icon {
+      border-color: #4f46e5;
+      color: #4f46e5;
+    } */
+
+    /* Make line blue for active step */
+    /* .active .icon::after {
+      background-color: #4f46e5;
+    } */
+
+    .text {
+      flex: 1;
+    }
+
+    .title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .desc {
+      font-size: 0.85rem;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+
+  <ul class="steps">
+    <li class="step done">
+      <div class="icon">1</div>
+      <div class="text">
+        <p class="title">Create account</p>
+        <p class="desc">Vitae sed mi luctus laoreet.</p>
+      </div>
+    </li>
+
+    <li class="step active">
+      <div class="icon">2</div>
+      <div class="text">
+        <p class="title">Profile information</p>
+        <p class="desc">Cursus semper viverra facilisis et et some more.</p>
+      </div>
+    </li>
+
+    <li class="step">
+      <div class="icon">3</div>
+      <div class="text">
+        <p class="title">Business information</p>
+        <p class="desc">Penatibus eu quis ante.</p>
+      </div>
+    </li>
+
+    <li class="step">
+      <div class="icon">4</div>
+      <div class="text">
+        <p class="title">Theme</p>
+        <p class="desc">Faucibus nec enim leo et.</p>
+      </div>
+    </li>
+
+    <li class="step">
+      <div class="icon">5</div>
+      <div class="text">
+        <p class="title">Preview</p>
+        <p class="desc">Iusto et officia maiores porro ad non quas.</p>
+      </div>
+    </li>
+  </ul>
+
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Vertical Stepper</title>
   <style>
     body {
@@ -51,26 +194,26 @@
       border: 2px solid #d1d5db;
     }
 
-    .step-icon.complete {
-      background-color: #4f46e5; /* indigo-600 */
+    /* .step-icon.complete {
+      background-color: #4f46e5;
       border: none;
-    }
+    } */
 
     .step-icon.complete svg {
       color: #fff;
     }
 
-    .step-icon.current {
+    /* .step-icon.current {
       border-color: #4f46e5;
-    }
+    } */
 
-    .step-icon.current::after {
+    /* .step-icon.current::after {
       content: '';
       width: 0.625rem;
       height: 0.625rem;
       background-color: #4f46e5;
       border-radius: 50%;
-    }
+    } */
 
     .step-text {
       margin-left: 1rem;
@@ -87,17 +230,18 @@
       color: #6b7280; /* gray-500 */
     }
 
-    .complete .step-name {
+    /* .complete .step-name {
       color: black;
-    }
+    } */
 
-    .current .step-name {
+    /* .current .step-name {
       color: #4f46e5;
-    }
+    } */
 
     .upcoming .step-name {
       color: #6b7280;
     }
+    
   </style>
 </head>
 <body>
@@ -161,4 +305,4 @@
   </nav>
 
 </body>
-</html>
+</html> -->

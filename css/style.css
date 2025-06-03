@@ -149,6 +149,9 @@ blockquote:before{
 	color: #374050;
 }
 
+.section-header2 {
+	margin-bottom:80px;
+}
 /* --- Background Image --- */
 .bg-image {
 	position:absolute;
@@ -847,10 +850,34 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 }
 
 /* -- Contact Map -- */
-#contact-map {
-	height:260px;
-	border-radius:4px;
+.contact-map {
+	width: 100%;
+	height: calc(100vw / 100 * 20); /* Default: 20% of viewport width */
+	border-radius: 4px;
 }
+
+/* Tablets and medium devices */
+@media (max-width: 991px) {
+	.contact-map {
+		height: calc(100vw / 100 * 30); /* 30% of viewport width */
+	}
+}
+
+/* Phones and small devices */
+@media (max-width: 767px) {
+	.contact-map {
+		height: calc(100vw / 100 * 40); /* 40% of viewport width */
+	}
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+	.contact-map {
+		height: 250px; /* Fixed height for better control */
+	}
+}
+
+
 
 /*------------------------------------*\
 	Blog Page
@@ -1384,3 +1411,90 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 	from { -webkit-transform: rotate(0deg); transform: rotate(0deg);}
 	to { -webkit-transform: rotate(360deg); transform: rotate(360deg);}
 }
+/*------------------------------------*\
+	 Our Services for Partner Schools
+\*------------------------------------*/ 
+
+    .steps {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;	  
+    }
+
+    .step {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    .icon {
+	  width: 50px;
+	  height: 50px;
+      border-radius: 50%;
+      background: #fff;
+      /* border: 2px solid #00125a; */
+      text-align: center;
+      font-weight: bold;
+      color: #ffd817;	
+      margin-right: 1rem;
+      /* flex-shrink: 0; */
+      position: relative;
+      z-index: 1; /* to be above the line */
+    }
+
+	
+
+    /* Add vertical line connecting icons */
+    .step:not(:last-child) .icon::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height:90px; /* height between steps */
+      background-color: #00125a;
+      z-index: 0;
+    }
+
+	
+
+    /* Done step icon style */
+    /* .done .icon {
+      background-color: #4caf50;
+      color: white;
+      border: none;
+    } */
+
+    /* Make line green for done steps */
+    /* .done .icon::after {
+      background-color: #4caf50;
+    } */
+
+    /* Active step icon style */
+    /* .active .icon {
+      border-color: #4f46e5;
+      color: #4f46e5;
+    } */
+
+    /* Make line blue for active step */
+    /* .active .icon::after {
+      background-color: #4f46e5;
+    } */
+
+    .text {
+      flex: 1;
+    }
+
+    .title {
+      font-size:19px;
+	  color: black;
+      font-weight: bold;
+      margin: 0;
+	  transition: all ease 0.1s;
+    }
+	.title:hover{
+		color: #ffd817;
+	}
+	
