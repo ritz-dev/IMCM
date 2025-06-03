@@ -90,7 +90,7 @@ ul,ol{
 	position: relative;
 	background-color: #fff;
 	display: inline-block;
-	padding: 5px 10px;
+	padding: 8px 10px;
 }
 
 .special-text::before{
