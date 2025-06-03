@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vertical Stepper</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f9f9f9;
+      padding: 2rem;
+    }
+
+    .stepper {
+      list-style: none;
+      padding-left: 0;
+      position: relative;
+    }
+
+    .stepper li {
+      position: relative;
+      padding-bottom: 2.5rem;
+    }
+
+    .stepper li:not(:last-child)::before {
+      content: '';
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      height: 100%;
+      width: 2px;
+      background: #d1d5db; /* gray-300 */
+    }
+
+    .step-link {
+      display: flex;
+      align-items: flex-start;
+      text-decoration: none;
+    }
+
+    .step-icon {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 9999px;
+      background: #fff;
+      border: 2px solid #d1d5db;
+    }
+
+    .step-icon.complete {
+      background-color: #4f46e5; /* indigo-600 */
+      border: none;
+    }
+
+    .step-icon.complete svg {
+      color: #fff;
+    }
+
+    .step-icon.current {
+      border-color: #4f46e5;
+    }
+
+    .step-icon.current::after {
+      content: '';
+      width: 0.625rem;
+      height: 0.625rem;
+      background-color: #4f46e5;
+      border-radius: 50%;
+    }
+
+    .step-text {
+      margin-left: 1rem;
+      flex: 1;
+    }
+
+    .step-name {
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+
+    .step-desc {
+      font-size: 0.875rem;
+      color: #6b7280; /* gray-500 */
+    }
+
+    .complete .step-name {
+      color: black;
+    }
+
+    .current .step-name {
+      color: #4f46e5;
+    }
+
+    .upcoming .step-name {
+      color: #6b7280;
+    }
+  </style>
+</head>
+<body>
+
+  <nav aria-label="Progress">
+    <ol class="stepper">
+      <li class="complete">
+        <a href="#" class="step-link">
+          <span class="step-icon complete">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-5 h-5" viewBox="0 0 20 20">
+              <path d="M16.707 5.293a1 1 0 010 1.414L8.414 15H7v-1.414l8.293-8.293a1 1 0 011.414 0z"/>
+            </svg>
+          </span>
+          <span class="step-text">
+            <span class="step-name">Create account</span>
+            <span class="step-desc">Vitae sed mi luctus laoreet.</span>
+          </span>
+        </a>
+      </li>
+
+      <li class="current">
+        <a href="#" class="step-link">
+          <span class="step-icon current"></span>
+          <span class="step-text">
+            <span class="step-name">Profile information</span>
+            <span class="step-desc">Cursus semper viverra facilisis et et some more.</span>
+          </span>
+        </a>
+      </li>
+
+      <li class="upcoming">
+        <a href="#" class="step-link">
+          <span class="step-icon"></span>
+          <span class="step-text">
+            <span class="step-name">Business information</span>
+            <span class="step-desc">Penatibus eu quis ante.</span>
+          </span>
+        </a>
+      </li>
+
+      <li class="upcoming">
+        <a href="#" class="step-link">
+          <span class="step-icon"></span>
+          <span class="step-text">
+            <span class="step-name">Theme</span>
+            <span class="step-desc">Faucibus nec enim leo et.</span>
+          </span>
+        </a>
+      </li>
+
+      <li class="upcoming">
+        <a href="#" class="step-link">
+          <span class="step-icon"></span>
+          <span class="step-text">
+            <span class="step-name">Preview</span>
+            <span class="step-desc">Iusto et officia maiores porro ad non quas.</span>
+          </span>
+        </a>
+      </li>
+    </ol>
+  </nav>
+
+</body>
+</html>
