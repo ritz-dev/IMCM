@@ -1438,11 +1438,11 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 	  display: flex;
 	  justify-content: center;
 	  align-items: center;
-	  width: 50px;
-	  height: 50px;
+	  width: 2rem;
+	  height: 2rem;
       border-radius: 50%;
       background: #fff;
-      border: 2px solid #00125a;
+      /* border: 2px solid #00125a; */
       text-align: center;
       font-weight: bold;
       color: #ffd817;		
@@ -1462,7 +1462,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
       top: 100%;
       transform: translateX(-50%);
       width: 2px;
-      height:60px; /* height between steps */
+      height:50px; /* height between steps */
       background-color: #00125a;
       z-index: 0;
     }
