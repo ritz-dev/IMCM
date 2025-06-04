@@ -504,7 +504,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 	height:80px;
 	text-align:center;
 	/* border-radius: 50%; */
-	font-size:30px;
+	font-size:28px;
 	/* border:1px solid #EBEBEB; */
 	color:#00125a;
 }
@@ -513,6 +513,9 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 	padding-left:100px;
 }
 
+.feature-content h4{
+     font-size:18px;
+}
 
 .feature1{
 	position:relative;
@@ -540,6 +543,12 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 
 .feature-content1 {
 	padding:0px 50px;
+}
+
+@media only screen and (max-width: 767px) {
+	#vision{
+      margin-top: 35px;
+	}
 }
 
 
@@ -1451,6 +1460,15 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
       position: relative;
 	  padding-top: 5px;
     }
+    /* step1 is left and step is right */ 
+	 .step1 {
+      display: flex;
+	  justify-content: center;
+	  align-items: center;
+      margin-bottom: 2rem;
+      position: relative;
+	  padding-top: 5px;
+    }
 
     .icon {
 	  display: flex;
@@ -1472,19 +1490,47 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 
 	
 
-    /* Add vertical line connecting icons */
-    .step:not(:last-child) .icon::after {
+    /* Add vertical line connecting icons step1 is left and step is right */
+    .step1:not(:last-child) .icon::after {
       content: '';
       position: absolute;
       left: 50%;
       top: 100%;
       transform: translateX(-50%);
       width: 2px;
-      height:50px; /* height between steps */
+      height:50px; /* height between steps  120px */ 
       background-color: #00125a;
       z-index: 0;
     }
 
+	.step:not(:last-child) .icon::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 100%;
+      transform: translateX(-50%);
+      width: 2px;
+      height:50px; /* height between steps  120px */ 
+      background-color: #00125a;
+      z-index: 0;
+    }
+
+@media only screen and (max-width: 767px) {
+	.step1:not(:last-child) .icon::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 100%;
+      transform: translateX(-50%);
+      width: 2px;
+      height:120px; /* height between steps  120px */ 
+      background-color: #00125a;
+      z-index: 0;
+    }
+
+}
+     
+    
 	
 
     /* Done step icon style */
