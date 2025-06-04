@@ -258,11 +258,29 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 	max-height:30px;
 }
 
+#img_logo {
+	display: none;
+}
+
 @media only screen and (max-width: 767px) {
 	.navbar-brand {
 		margin-left:15px;
 	}
+	#img_logo{
+    display: inline;
+	max-height: 30px;
+	width: auto;
+	height: auto;
+	margin-top: 10px;
+	padding-left: 40px;
+	padding-bottom: 5px;
+}
+	#img_logo:hover {
+		cursor: pointer;
+	}
 } 
+
+
 
 /*------------------------------------*\
 	Navigation
